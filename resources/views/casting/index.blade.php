@@ -7,7 +7,7 @@
 
     @forelse ($castings as $casting)
         <div class="bg-white m-8 p-5 rounded w-96">
-            <h2 class="font-bold text-lg text-center mb-3"><strong>Mon Cadre</strong></h2>
+            <h2 class="font-bold text-2xl text-center mb-3"><strong>Mon Cadre</strong></h2>
             <div class="mb-5 text-center">Description du casting</div>
             <div class="gap-x-5 flex justify-center">
                 <a href="{{ route('casting.show', [$casting->id]) }}">En savoir plus</a>

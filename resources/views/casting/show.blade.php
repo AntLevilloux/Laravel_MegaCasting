@@ -6,15 +6,20 @@
     </x-slot>
 
     @forelse ($castings as $casting)
-    <div class='text-white'>
-        <div>
+    <div class='bg-white m-8 p-5 rounded w-96 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <div class="font-bold text-2xl text-center mb-3">
             {{ $casting->libelle }}
         </div>
-        <div >
+        <div div class="text-center">
 
-            {{ $casting->description }}
-            {{ $casting->date }}
-            {{ $casting->type }}
+            <div class="mb-2">{{ $casting->type }}</div>
+            <div class="mb-2">{{ $casting->description }}</div>
+            <div class="mb-2">{{ $casting->date }}</div>
+            <div class="mb-2">{{ $casting->adresse_id}}</div>
+            <div class="mb-2">{{ $casting->partenaire_id}}</div>
+
+            <button class="bg-green-600 p-2 hover:bg-green-500">Postuler</button>
+
         </div>
     </div>
     @empty
