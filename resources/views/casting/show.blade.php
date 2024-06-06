@@ -6,24 +6,29 @@
     </x-slot>
 
     @forelse ($castings as $casting)
-    <div class='bg-white m-8 p-5 rounded w-96 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-        <div class="font-bold text-2xl text-center mb-3">
-            {{ $casting->libelle }}
-        </div>
-        <div div class="text-center">
 
-            <div class="mb-2">{{ $casting->type }}</div>
-            <div class="mb-2">{{ $casting->description }}</div>
-            <div class="mb-2">{{ $casting->date }}</div>
-            <div class="mb-2">{{ $casting->adresse_id}}</div>
-            <div class="mb-2">{{ $casting->partenaire_id}}</div>
+        <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+            <div class='bg-white m-8 p-5 rounded w-96 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg'>
+                <div class="font-bold text-2xl text-center mb-3">
+                    {{ $casting->libelle }}
+                </div>
+                <div class="text-center">
+                    <div class="mb-2">{{ $casting->type }}</div>
+                    <div class="mb-2">{{ $casting->description }}</div>
+                    <div class="mb-2">{{ $casting->date }}</div>
+                    <div class="mb-2">{{ $casting->adresse_id}}</div>
+                    <div class="mb-2">{{ $casting->partenaire_id}}</div>
+                    <button class="bg-green-600 p-2 rounded hover:bg-green-500">
+                        <a href="{{ route('casting.postule') }}">Postuler</a>
+                    </button>
+                </div>
+            </div>
+        </body>
 
-            <button class="bg-green-600 p-2 hover:bg-green-500">Postuler</button>
-
-        </div>
-    </div>
     @empty
+
         <!-- Afficher un message si la liste des castings est vide -->
         <p class="text-center text-red-500 text-2xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">Aucune Informations.</p>
+
     @endforelse
 </x-app-layout>

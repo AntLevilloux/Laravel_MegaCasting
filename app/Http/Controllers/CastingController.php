@@ -29,7 +29,7 @@ class CastingController extends Controller
      */
     public function show(casting $casting)
     {
-        $castings = casting::all();
+        $castings = Casting::all();
 
         return view('casting.show', compact('castings'));
 
@@ -64,7 +64,7 @@ class CastingController extends Controller
      */
     public function postule(casting $casting)
     {
-        $castings = casting::all();
+        $castings = Casting::all();
 
         return view('casting.postule', compact('castings'));
     }

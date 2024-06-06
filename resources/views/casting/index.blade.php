@@ -14,18 +14,20 @@
 
         @foreach ( $castings as $casting )
 
-            <div class="bg-white m-8 p-5 rounded w-96">
-            <h2 class="font-bold text-2xl text-center mb-3"><strong>{{$casting->libelle}}</strong></h2>
-            <div class="mb-5 text-center">{{$casting->description}}</div>
-
-                <div class="gap-x-5 flex justify-center">
-
-                    <a href="{{ route('casting.show', [$casting->id]) }}">En savoir plus</a>
-                    <button class="bg-green-600 p-2 hover:bg-green-500"><a href="{{ route('casting.postule', [$casting->id]) }}">Postuler</a></button>
-
+        <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+            <div class="space-y-8 flex flex-col items-center justify-center w-full">
+                <div class="bg-white p-[2%] rounded w-96 shadow-lg mb-[5%]">
+                    <h2 class="font-bold text-2xl text-center mb-3"><strong>{{$casting->libelle}}</strong></h2>
+                    <div class="mb-5 text-center">{{$casting->description}}</div>
+                    <div class="gap-x-5 flex justify-center">
+                        <a class="text-blue-500 hover:underline" href="{{ route('casting.show', [$casting->id]) }}">En savoir plus</a>
+                        <button class="bg-green-600 p-2 rounded hover:bg-green-500">
+                            <a href="{{ route('casting.postule') }}">Postuler</a>
+                        </button>
+                    </div>
                 </div>
-
             </div>
+        </body>
 
         @endforeach
 

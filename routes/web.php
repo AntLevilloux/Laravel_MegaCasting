@@ -36,7 +36,6 @@ Route::resource('/casting', CastingController::class);
 
 Route::get('/postule', [CastingController::class, 'postule'])->name('casting.postule');
 
-Route::get('/casting/postule', [CastingController::class, 'postule'])->name('casting.postule');
 Route::post('/casting/postule', [CastingController::class, 'store'])->name('postulation.store');
 
 // Route::get('/casting/{description}', [CastingController::class, 'show'])->name('casting');

@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class casting extends Model
 {
     use HasFactory;
-    protected $table = 'postule';
+    protected $table = 'casting';
 
     public $timestamps = false;
 
     // Permet l'affectation de masse pour ces colonnes
     protected $fillable = [
-        'prenom_postule', // Ajoutez cette ligne
-        'nom_postule', // Ajoutez cette ligne
-        'age_postule', // Ajoutez cette ligne
-        'mail_postule', // Ajoutez cette ligne
-        'num_postule', // Ajoutez cette ligne
+        'libelle', // Ajoutez cette ligne
+        'type', // Ajoutez cette ligne
+        'description', // Ajoutez cette ligne
+        'date', // Ajoutez cette ligne
+        'adresse', // Ajoutez cette ligne
         // Ajoutez les autres colonnes fillable ici si nécessaire
     ];
 }
