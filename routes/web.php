@@ -5,6 +5,7 @@ use App\Http\Controllers\DescriptionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Console\Descriptor\Descriptor;
+use App\Http\Controllers\PostulationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/casting', CastingController::class);
+
+Route::get('/postule', [CastingController::class, 'postule'])->name('casting.postule');
+
+Route::get('/casting/postule', [CastingController::class, 'postule'])->name('casting.postule');
+Route::post('/casting/postule', [CastingController::class, 'store'])->name('postulation.store');
 
 // Route::get('/casting/{description}', [CastingController::class, 'show'])->name('casting');
 
